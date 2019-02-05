@@ -203,4 +203,14 @@ public class BoardController {
 //		return "board/boardForm";
 	}
 	
+	@RequestMapping("/board/boardView3.do")
+	public String boardView3(@RequestParam int boardNo, Model model) {
+		Board board = boardService.boardView(boardNo);
+		List<Attachment> attachmentList = boardService.attachmentView(boardNo);
+
+		model.addAttribute("board", board);
+		model.addAttribute("attachmentList", attachmentList);
+		return "board/boardView";
+	}
+	
 }
