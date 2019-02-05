@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<!-- #9.2 AOP관련태그 작성 -->
+	<!-- ============ 선언적 AOP 시작 ============ -->
+	<!-- LoggerAspect 빈등록 -->
+	<!-- 
+	<bean id="loggerAspect" class="com.kh.spring.common.aop.LoggerAspect" />
+	<aop:config>
+		<aop:aspect id="loggerAspect" ref="loggerAspect">
+			<aop:pointcut expression="execution(* com.kh.spring.memo..*(..))" id="pointCutForAll"/>
+			<aop:around method="loggerAdvice" pointcut-ref="pointCutForAll"/>
+		</aop:aspect>
+	</aop:config>
+	 -->
+	<!-- ============ 선언적 AOP 끝 ============ -->
+	
+	<!-- ============ 프로그래밍적 AOP 시작 ============ -->
+	<aop:aspectj-autoproxy/>
+	<!-- ============ 프로그래밍적 AOP 끝 ============ -->
+	
+	<!-- #11.2 트랜잭션 처리를 위해서 특정클래스/특정메소드를 aop pointcut으로 등록함 -->
+	<!--
+	<aop:config>
+	  <aop:pointcut id="serviceMethod" expression="execution(* com.kh.spring..*ServiceImpl.*(..))" />
+    </aop:config>
+    -->
+    
+</beans>
