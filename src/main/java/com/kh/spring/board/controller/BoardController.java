@@ -186,4 +186,14 @@ public class BoardController {
 		bos.close();
 		bis.close();
 	}
+	
+	@RequestMapping("/board/boardView2.do")
+	public String boardView2(@RequestParam int boardNo, Model model) {
+		Board board = boardService.boardView(boardNo);
+		List<Attachment> attachmentList = boardService.attachmentView(boardNo);
+
+		model.addAttribute("board", board);
+		model.addAttribute("attachmentList", attachmentList);
+		return "board/boardView";
+	}
 }
