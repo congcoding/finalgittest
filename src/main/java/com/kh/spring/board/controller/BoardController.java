@@ -196,4 +196,11 @@ public class BoardController {
 		model.addAttribute("attachmentList", attachmentList);
 		return "board/boardView";
 	}
+
+	@RequestMapping("/board/boardForm.do")
+	public void boardForm2() {
+		//return type이 void일 때 : ViewTranslator에서 요청url로부터 뷰단파일경로를 유추
+//		return "board/boardForm";
+	}
+	
 }
